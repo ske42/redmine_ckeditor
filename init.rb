@@ -19,4 +19,12 @@ Redmine::Plugin.register :redmine_ckeditor do
     RedmineCkeditor::WikiFormatting::Helper
 end
 
+class CKEditorSpoilerHookListener < Redmine::Hook::ViewListener
+  def view_layouts_base_html_head(context)
+    javascript_include_tag('spoiler.js', :plugin => :redmine_ckeditor) + 
+    stylesheet_link_tag('spoiler.css', :plugin => :redmine_ckeditor)
+  end
+end
+
+
 Loofah::HTML5::WhiteList::ALLOWED_PROTOCOLS.replace RedmineCkeditor.allowed_protocols

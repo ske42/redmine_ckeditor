@@ -1,0 +1,8 @@
+span.collapsible {
+	padding-left: 12px; background: url(../images/arrow_expanded.png) no-repeat -3px 40%;
+	color: #169;text-decoration: none; cursor:pointer;
+}
+span.collapsible.collapsed {background: url(../images/arrow_collapsed.png) no-repeat -5px 40%;}
+span.collapsible:hover {
+	color: #c61a1a; text-decoration: underline; cursor:pointer;
+}
