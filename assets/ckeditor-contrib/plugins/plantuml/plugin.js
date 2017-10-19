@@ -91,10 +91,10 @@ CKEDITOR.plugins.add( 'plantuml',
 								},
 								commit : function( element )
 								{
-									var u = compress(this.getValue());
-									u = "http://www.plantuml.com/plantuml/img/"+u;
 									element.setAttribute( "alt", this.getValue() );
-									element.setAttribute( "src", u );
+									var url = "http://www.plantuml.com/plantuml/img/"+compress(this.getValue()) ;
+									element.data( 'cke-saved-src', url);
+									element.setAttribute( "src", url);
 								}
 							},
 						]
