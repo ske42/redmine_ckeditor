@@ -82,7 +82,9 @@ module RedmineCkeditor
           :allowedContent => true,
           :bodyClass => "wiki",
           :removePlugins => 'div,flash,forms,iframe',
-          :forcePasteAsPlainText => false
+          :forcePasteAsPlainText => false,
+         :scayt_autoStartup => false,
+         :disableNativeSpellChecker => false,
         }
         file = Rails.root.join("config/ckeditor.yml")
         conf.merge!(YAML.load_file(file).symbolize_keys) if file.exist?
